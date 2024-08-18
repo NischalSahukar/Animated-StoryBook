@@ -3,7 +3,6 @@ OR, add the following code to the project code.
 
 
 import os
-
 def rename_images(folder_path):
     # Get all image files
     image_files = [f for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
@@ -15,6 +14,4 @@ def rename_images(folder_path):
         new_file = os.path.join(folder_path, f"{i+1:03d}{os.path.splitext(filename)[1]}")
         os.rename(old_file, new_file)
         print(f"Renamed {filename} to {os.path.basename(new_file)}")
-
-# Usage
 rename_images("path_to_your_image_folder")
